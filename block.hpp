@@ -20,7 +20,7 @@ class Block {
         string sPrevHash;
         Block (uint32_t nIndexIn, const string &sDataIn);
         string GetHash();
-        void MideBlock(uint32_t nDifficulty);
+        void MineBlock(uint32_t nDifficulty);
 
 };
 
