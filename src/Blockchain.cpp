@@ -1,9 +1,9 @@
-#include "Blockchain.hpp"
+#include "Blockchain.h"
 
 // Initialize blockchain with genesis block
 Blockchain::Blockchain() {
     _vChain.emplace_back(Block(0, "Genesis Block"));
-    _nDifficulty = 5;
+    _nDifficulty = 6;
 }
 
 // Add block to blockchain
