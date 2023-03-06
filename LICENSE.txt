@@ -1,5 +1,5 @@
 /*
- * sha256.cpp / SHA256.hpp
+ * sha256.cpp / SHA256.h
  * =======================
  *
  * Updated to C++, zedwood.com 2012

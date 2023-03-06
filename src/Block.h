@@ -17,6 +17,8 @@ class Block {
         string _CalculateHash() const;
 
     public:
+        Block* _bNext = nullptr;
+        Block* _bPrev = nullptr;
         string sPrevHash;
         Block (uint32_t nIndexIn, const string &sDataIn);
         string GetHash();

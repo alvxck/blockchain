@@ -9,6 +9,7 @@ using namespace std;
 
 class Blockchain {
     private:
+        Block* _bGenesisBlock;
         uint32_t _nDifficulty;
         vector<Block> _vChain;
         Block _GetLastBlock() const;

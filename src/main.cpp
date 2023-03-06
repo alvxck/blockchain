@@ -3,7 +3,6 @@
 
 int main() {
 
-    // For testing
     
     // Blockchain bChain = Blockchain();
 
