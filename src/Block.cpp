@@ -41,7 +41,7 @@ void Block::MineBlock(uint32_t nDifficulty) {
 // Creates and returns hash
 inline string Block::_CalculateHash() const {
     stringstream raw;
-    raw << _nIndex << _tTime << _sData << _nNonce << sPrevHash << _bNext << _bPrev;
+    raw << _nIndex << _tTime << _sData << _nNonce << sPrevHash << _bPrev;
 
     return sha256(raw.str());
 }

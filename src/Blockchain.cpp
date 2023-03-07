@@ -5,24 +5,19 @@ Blockchain::Blockchain() {
     cout << "-> Initialize blockchain" << endl;
 
     _bGenesisBlock = new Block(0, "Genesis Block");
-
-    // _vChain.emplace_back(Block(0, "Genesis Block"));
-    _nDifficulty = 1;
+    _bLast = _bGenesisBlock;
+    _nDifficulty = 2;
 }
 
 // Add block to blockchain
 void Blockchain::AddBlock(Block bNew) {
     cout << "-> Adding block" << endl;
 
-    Block* _bTemp = _bGenesisBlock;
-    while (_bTemp->_bNext != nullptr) {
-        _bTemp = _bTemp->_bNext;
-    }
-    _bTemp->_bNext = &bNew;
-    bNew._bPrev = _bTemp;
-    
-    bNew.sPrevHash = _bTemp->GetHash();
+    _bLast->_bNext = &bNew;
+    bNew._bPrev = _bLast;
+
+    bNew.sPrevHash = _bLast->GetHash();
     bNew.MineBlock(_nDifficulty);
-    
-    // _vChain.push_back(bNew);
+
+    _bLast = &bNew;
 }
