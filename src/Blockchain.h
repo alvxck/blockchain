@@ -1,5 +1,5 @@
-#ifndef BLOCKCHAIN_BLOCKCHAIN_HPP
-#define BLOCKCHAIN_BLOCKCHAIN_HPP
+#ifndef BLOCKCHAIN_BLOCKCHAIN_H
+#define BLOCKCHAIN_BLOCKCHAIN_H
 
 #include <cstdint>
 #include <vector>

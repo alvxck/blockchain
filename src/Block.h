@@ -1,5 +1,5 @@
-#ifndef BLOCKCHAIN_BLOCK_HPP
-#define BLOCKCHAIN_BLOCK_HPP
+#ifndef BLOCKCHAIN_BLOCK_H
+#define BLOCKCHAIN_BLOCK_H
 
 #include <cstdint>
 #include <iostream>
