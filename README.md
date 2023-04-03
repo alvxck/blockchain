@@ -1,12 +1,22 @@
 # Blockchain
 
+A simple blockchain implementation with C++.
+
 ## Overview
 
-This is a simple blockchain implementation in C++. The chain is a linked list of blocks, with each new block composed of: 
+The blockchain is a linked list composed of blocks, with each new block containing: 
 
-- user data
-- timestamp
+- user data 
+- timestamp 
 - previous block hash
-- new block hash
 
-Each new block is validated by a proof of work algorithm, which is a simple sha256 hash. The hash difficulty can vary based on the  `_nDifficulty` parameter within `Blockchain.h`.
+Each new block is validated by a proof of work algorithm using sha256. The hash difficulty can vary based on the  `_nDifficulty` parameter within `Blockchain.h`.
+
+## Functionality
+
+The following is the process of adding a new block to the blockchain:
+
+1. Genesis block is created with a default value of 0.
+2. User passes data to uninitialized block.
+3. New hashs are generated based on user data, timestamp, and previous block hash.
+4. Once a valid hash is found (based on `_nDifficulty`), the block is added to the blockchain.
