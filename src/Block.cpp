@@ -5,7 +5,7 @@
 #include <sstream>
 
 // Block implementation
-Block::Block(uint32_t nIndexIn, const string &sDataIn) : _nIndex(nIndexIn), _sData(sDataIn) {
+Block::Block(uint32_t nIndexIn, const std::string &sDataIn) : _nIndex(nIndexIn), _sData(sDataIn) {
     _nNonce = -1;
     _tTime = time(nullptr);
     _bNext = nullptr;
@@ -13,34 +13,31 @@ Block::Block(uint32_t nIndexIn, const string &sDataIn) : _nIndex(nIndexIn), _sDa
 }
 
 // Returns hash of current block
-string Block::GetHash() {
-    cout << "-> Getting hash" << endl;
+std::string Block::GetHash() {
+    std::cout << "-> Getting hash" << std::endl;
 
     return _sHash;
 }
 
 // Block mining implementation (PoW : Proof of work)
 void Block::MineBlock(uint32_t nDifficulty) {
-    cout << "-> Mining block" << endl;
+    std::cout << "-> Mining block" << std::endl;
 
-    vector<char> cstr(nDifficulty, '0');
+    std::vector<char> cstr(nDifficulty, '0');
 
-    string str(cstr.begin(), cstr.end());
+    std::string str(cstr.begin(), cstr.end());
 
     do {
         _nNonce++;
         _sHash = _CalculateHash();
-
-        cout << "-> Trying: " <<  _sHash << endl;
-
     } while (_sHash.substr(0, nDifficulty) != str);
 
-    cout << "-> Block Mined: " << _sHash << endl;
+    std::cout << "-> Block Mined: " << _sHash << std::endl;
 }
 
 // Creates and returns hash
-inline string Block::_CalculateHash() const {
-    stringstream raw;
+inline std::string Block::_CalculateHash() const {
+    std::stringstream raw;
     raw << _nIndex << _tTime << _sData << _nNonce << sPrevHash << _bPrev;
 
     return sha256(raw.str());

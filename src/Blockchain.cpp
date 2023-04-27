@@ -2,7 +2,7 @@
 
 // Initialize blockchain with genesis block
 Blockchain::Blockchain() {
-    cout << "-> Initialize blockchain" << endl;
+    std::cout << "-> Initialize blockchain" << std::endl;
 
     _bGenesisBlock = new Block(0, "Genesis Block");
     _bLast = _bGenesisBlock;
@@ -11,7 +11,7 @@ Blockchain::Blockchain() {
 
 // Add block to blockchain
 void Blockchain::AddBlock(Block bNew) {
-    cout << "-> Adding block" << endl;
+    std::cout << "-> Adding block" << std::endl;
 
     _bLast->_bNext = &bNew;
     bNew._bPrev = _bLast;
